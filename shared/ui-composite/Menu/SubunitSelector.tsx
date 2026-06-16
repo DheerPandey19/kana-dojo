@@ -11,9 +11,6 @@ type SubunitSelectorProps = {
   onSelect: (subunitId: string) => void;
 };
 
-const SUBUNIT_SELECTOR_ACTIVE_FLOAT_CLASSES =
-  'motion-safe:animate-float [--float-distance:-0px] delay-250ms';
-
 const SubunitSelector = ({
   subunits,
   selectedSubunitId,
@@ -41,12 +38,7 @@ const SubunitSelector = ({
                   damping: 30,
                 }}
               >
-                <div
-                  className={clsx(
-                    'h-full w-full rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color)',
-                    SUBUNIT_SELECTOR_ACTIVE_FLOAT_CLASSES,
-                  )}
-                />
+                <div className='h-full w-full rounded-2xl border-b-6 border-(--secondary-color-accent) bg-(--secondary-color)' />
               </motion.div>
             )}
             <ActionButton
@@ -55,7 +47,6 @@ const SubunitSelector = ({
               borderRadius='2xl'
               className={clsx(
                 'relative z-10 flex h-full w-full items-center justify-center px-4 pt-3 pb-4 text-center text-sm',
-                isSelected && SUBUNIT_SELECTOR_ACTIVE_FLOAT_CLASSES,
                 isSelected
                   ? 'bg-transparent text-(--background-color)'
                   : 'bg-transparent text-(--main-color) hover:bg-(--border-color)/50',
